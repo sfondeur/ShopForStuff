@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_193222) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
-    t.decimal "price", precision: 15, scale: 2
+    t.decimal "price", precision: 6, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "order_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_193222) do
   create_table "orders", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.decimal "subtotal", precision: 15, scale: 2
+    t.decimal "subtotal", precision: 6, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_193222) do
 
   create_table "product_variants", force: :cascade do |t|
     t.string "title"
-    t.decimal "price", precision: 15, scale: 2
+    t.decimal "price", precision: 6, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "product_id"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2018_11_06_193222) do
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.decimal "price", precision: 15, scale: 2
+    t.decimal "price", precision: 6, scale: 2
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

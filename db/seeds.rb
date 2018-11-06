@@ -6,7 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 # faker commerce stuff
+# For unique values only
+# Faker::Name.unique.name
 # Faker::Commerce.color #=> "lavender"
 
 # Optional arguments max=3, fixed_amount=false
@@ -27,4 +30,4 @@
 # Faker::Commerce.promotion_code #=> "AmazingDeal829102"
 # Faker::Commerce.promotion_code(digits = 2) #=> "AmazingPrice57"
 
-# Faker::Commerce.material #=> "Plastic"
+# Faker::Commerce.material #=> "Plastic"AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

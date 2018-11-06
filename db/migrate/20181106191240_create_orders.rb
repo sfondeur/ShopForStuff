@@ -3,7 +3,7 @@ class CreateOrders < ActiveRecord::Migration[5.2]
     create_table :orders do |t|
       t.string :first_name
       t.string :last_name
-      t.decimal :subtotal, precision: 15, scale: 2
+      t.decimal :subtotal, precision: 6, scale: 2
 
       t.timestamps
     end
