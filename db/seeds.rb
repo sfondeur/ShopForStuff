@@ -31,6 +31,7 @@ furn.products.create title:'TV Stand', description: 'Tv stand for your media rel
 puts "Number of Categories created: #{Category.count}"
 puts "Number of Products created: #{Product.count}"
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 # faker commerce stuff
 # For unique values only
@@ -55,4 +56,4 @@ puts "Number of Products created: #{Product.count}"
 # Faker::Commerce.promotion_code #=> "AmazingDeal829102"
 # Faker::Commerce.promotion_code(digits = 2) #=> "AmazingPrice57"
 
-# Faker::Commerce.material #=> "Plastic"AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+# Faker::Commerce.material #=> "Plastic"
