@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry'
 gem 'activeadmin'   # Admin stuff
 gem 'devise'        # User auth
-
+gem 'rubocop'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
