@@ -26,11 +26,15 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# The following bunch of gems are the extras i've added..
 gem 'pry'
 gem 'activeadmin'   # Admin stuff
 gem 'devise'        # User auth
-gem 'rubocop'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'materialize-sass'
+
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

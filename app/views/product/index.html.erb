@@ -1,16 +1,3 @@
-<h1>Products Index page</h1>
-
-<% @products.each do |x| %>
-    <div>
-        <p>
-            <b>Name: </b><%= link_to x.title, x %>
-        </p>
-        <p>
-            <b>Description: </b><%= x.description %>
-        </p>
-        <p>
-            <b>Price: </b><%= x.price %>
-        </p>
-    </div>
-
-<% end %>
+<%= render partial: 'product',
+           collection: @products,
+           locals: { show_details_link: true} %>
