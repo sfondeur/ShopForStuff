@@ -12,5 +12,13 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery  
+//= require jquery_ujs
+//= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
+//= require materialize
+
+$(document).ready(function(){
+    $('.dropdown-trigger').dropdown({ coverTrigger: false });
+ });

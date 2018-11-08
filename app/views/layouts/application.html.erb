@@ -7,16 +7,35 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   </head>
 
   <body>
-    <header>
-      <h1>Shop For Stuffs</h1>
-    </header>
-    <%= yield %>
+      <ul id="dropdown" class="dropdown-content">
+        <li><a href="#!">Option 1</a></li>
+        <li><a href="#!">Option 2</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">Option 3</a></li>
+      </ul>
+      <nav class="teal lighten-1">
+        <div class="container">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Shop For Stuffs</a>
+            <ul class="right hide-on-med-and-down">
+              <li><a class="waves-effect waves-light">Home</a></li>
+              <li><a class="waves-effect waves-light">About</a></li>
+              <li><a class="waves-effect waves-light">Contact</a></li>
+              <!-- Dropdown Trigger -->
+              <li><a class="dropdown-trigger" href="#" data-belowOrigin="true" data-target="dropdown" >Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+            </div>
+        </div>
+      </nav>
 
-    <footer>
+      <div class="container">
+        <%= yield %>
+      </div>
 
-    </footer>
   </body>
 </html>
