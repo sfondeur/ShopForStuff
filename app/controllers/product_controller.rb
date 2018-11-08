@@ -9,3 +9,9 @@ class ProductController < ApplicationController
     @product = Product.find(params[:id])
   end
 end
+
+# TODO:
+#   BE ABLE TO FILTER PRODUCTS BY RECENTLY UPDATED
+#   BE ABLE TO FILTER PRODUCTS BY NEWLY CREATED
+#   MAKE FRONT PAGE DEDICATED TO ONLY THESE TYPES OF PRODUCTS
+

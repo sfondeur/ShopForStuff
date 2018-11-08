@@ -9,6 +9,9 @@ class PagesController < ApplicationController
             render :show
         end
     end
+
+    def home
+    end
     
     def show
         @page = Page.find(params[:id])

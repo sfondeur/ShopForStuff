@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
 
   get ':permalink', to: 'pages#permalink'
   get 'static_about', to: 'pages#about', as: 'about'
+  get 'static_home', to: 'pages#home', as: 'home'
 
-  root to: 'product#index'
+  # root to: 'product#index'
 end

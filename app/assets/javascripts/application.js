@@ -10,14 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//= require jquery
 //= require rails-ujs
 //= require activestorage
-//= require jquery  
-//= require jquery_ujs
-//= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
+//= require materialize-sprockets
 //= require materialize
+//= require active_admin.js
+
 
 $(document).ready(function(){
     $('.dropdown-trigger').dropdown({ coverTrigger: false });
