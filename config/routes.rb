@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :pages, only: [:show]
 
   get ':permalink', to: 'pages#permalink'
-  get 'static_about', to: 'pages#about', as: 'about'
+  # get 'static_about', to: 'pages#about', as: 'about'
 
   root to: 'product#index'
 end
