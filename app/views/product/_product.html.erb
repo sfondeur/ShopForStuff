@@ -1,8 +1,9 @@
 <h5><%= product.title %></h5>
-    <% if show_details_link %>
-        <b>Name: </b> <%= link_to 'View Details', product %>
-    <% end %>
+    
+<% if show_details_link %>
+    <b>Name: </b> <%= link_to 'View Details', product %>
+<% end %>
 
-    <b>Description: </b> <%= product.description %>
+<b>Description: </b> <%= product.description %>
 
-    <b>Price: </b> <%= product.price %>
+<b>Price: </b> <%= product.price %>
