@@ -2,6 +2,8 @@ class ProductController < ApplicationController
   # collection of all Products
   def index
     @products = Product.order(:title)
+
+    # Product.where("created_at >= ?", 1.week.ago.utc).order("DESC, created_at DESC")
   end
 
   # Specific Product by ID

@@ -1,7 +1,6 @@
-<h5><%= product.title %></h5>
+<p class="remove-botom-margin"><%= product.title %> - <%= product.manufacturer %></p>
     
 <% if show_details_link %>
-    <b>Name: </b> <%= link_to 'View Details', product %>
+    <%= link_to 'View Details', product %>
 <% end %>
-
-<b>Price: </b> <%= product.price %>
+<br>
