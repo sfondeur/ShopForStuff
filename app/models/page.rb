@@ -1,3 +1,3 @@
 class Page < ApplicationRecord
-    # empty model 
+    # empty model for static pages
 end

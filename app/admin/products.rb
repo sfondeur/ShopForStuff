@@ -1,5 +1,5 @@
 ActiveAdmin.register Product do
-    permit_params :title, :description, :price, :image, 
+    permit_params :title, :description, :price, :image,
                   product_categories_attributes: [ :id, :product_id, :category_id, :_destroy ]
 
     index do

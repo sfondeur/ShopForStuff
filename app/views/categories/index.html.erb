@@ -1,5 +1,5 @@
 <!-- loop through @categories and display a grid of cards to give user a choice of category browsing -->
 
 <% @categories.each do |x| %>
-    <h5><%= x.title %></h5>
+    <h5><%= link_to x.title, x %></h5>
 <% end %>

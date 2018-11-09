@@ -18,7 +18,6 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize
-//= require active_admin.js
 
 
 $(document).ready(function(){
