@@ -13,8 +13,7 @@
 
 //= require jquery
 //= require rails-ujs
-//= require activestorage
-//= require turbolinks
+//= require activestorage   
 //= require_tree .
 //= require materialize-sprockets
 //= require materialize
