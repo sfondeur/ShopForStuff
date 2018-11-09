@@ -1,3 +1,26 @@
-<%= render partial: 'product',
+<!--<%= render partial: 'product',
            object: @product,
-           locals: { show_details_link: false} %>
+           locals: { show_details_link: false} %>-->
+
+
+    <div class="col s12 m7 show_card">
+    <h2 class="header"><%= @product.title %></h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img class="show_image" src="<%= @product.image %>" alt="full image">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <ul>
+            <li><b>Description: </b> <%= @product.description %></li>
+            <li><b>Price: </b> <%= @product.price %></li>
+          </ul>
+        </div>
+
+        <div class="card-action">
+
+            <div class="spacer"></div>
+        </div>
+      </div>
+    </div>
+  </div>

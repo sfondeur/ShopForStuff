@@ -1,2 +1,26 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<h1>Welcome to ShopForStuffs!</h1>
+
+<p>Check out some of the new items that we've just received, or browse the store using the menu!</p>
+
+
+<div class="col s12 m7 featured_card">
+    <h5 class="header">Currently on Sale!</h5>
+    <div class="card horizontal hoverable">
+        <div class="card-image">
+            <img class="featured_image" src="<%= @random_product.image %>" alt="featured product">
+        </div>
+    <div class="card-stacked">
+        <div class="card-content">
+            <div>
+				<%= link_to @random_product.title, @random_product %>
+        	</div>
+			<div>
+				<%= number_to_currency @random_product.price %>
+        	</div>
+            <div>
+			    <%= @random_product.description %>
+		    </div>
+        </div>
+    </div>
+    </div>
+</div>
