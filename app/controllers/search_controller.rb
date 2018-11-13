@@ -3,6 +3,7 @@ class SearchController < ApplicationController
     end
 
     def results
-        @products = Product.where('title LIKE ?', "%#{params[:q]}%")
+        @products = Product.where('title LIKE ? OR manufacturer LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
+        
     end
 end

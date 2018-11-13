@@ -20,5 +20,5 @@
 
 
 $(document).ready(function(){
-    $('.dropdown-trigger').dropdown({ coverTrigger: false });
+    $('.dropdown-trigger').dropdown({ coverTrigger: false, constrainWidth: false, hover: true });
  });
