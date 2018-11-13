@@ -22,3 +22,8 @@
 $(document).ready(function(){
     $('.dropdown-trigger').dropdown({ coverTrigger: false, constrainWidth: false, hover: true });
  });
+
+ document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
