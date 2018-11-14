@@ -66,10 +66,6 @@ footer {
     text-align: center;
 }
 
-.searchbtn{
-    width: 100%;
-}
-
 .lineheight {
     line-height: 55px;
 }
@@ -77,4 +73,30 @@ footer {
 .cartdropdown {
     width: 300px;
     height: 250px;
+}
+
+.formsearch, .searchform {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    height: 36px;
+    text-indent: 15px;
+    text-decoration: none;
+}
+
+.formsearch {
+    display: inline-flex;
+}
+
+div .input-field {
+    margin-top: 5px;
+}
+
+.searchicon {
+    position: relative;
+    bottom: 12px;
+    right: 2px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.753) inset !important;
 }

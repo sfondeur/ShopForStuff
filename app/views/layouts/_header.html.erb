@@ -18,10 +18,24 @@
 
 
 <nav class="teal lighten-1">
-    <div class="container">
+   <div class="container">
         <div class="nav-wrapper">
             <a href="/" class="brand-logo">Shop For Stuffs</a>
                 <ul class="right hide-on-med-and-down">
+                <li>    
+                   <div class="center row">
+                      <div class="col s12 " >
+                        <div class="row" id="topbarsearch">
+                          <div class="input-field col s6 s12">
+                            <%= form_tag(results_search_index_path, method: "get", class: "formsearch" ) do %>
+                              <%= text_field_tag(:q, "", class: "searchform") %>
+                              <button class="btn teal lighten-2 waves-effect waves-light" type="submit" name="action"><i class="material-icons searchicon">search</i></button>
+                            <% end %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>          
+                  </li> 
                     <li><a class="waves-effect waves-light" href="/">Home</a></li>
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" data-belowOrigin="true" data-target="dropdown">
@@ -34,5 +48,5 @@
                     </li>
                 </ul>
         </div>
-    </div>
+  </div>
 </nav>
