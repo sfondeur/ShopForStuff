@@ -22,4 +22,9 @@ class ApplicationController < ActionController::Base
     def load_shopping_cart
         @shopping_cart = session[:shopping_cart]
     end
+
+    def add_to_cart
+        # .push method to add to the session[] (or append with '>>')
+        # For the cart number in the header, use session[].size
+    end
 end

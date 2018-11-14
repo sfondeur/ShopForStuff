@@ -2,6 +2,7 @@
            object: @product,
            locals: { show_details_link: false} %>-->
 <p>
+  <%= link_to 'Home', 'welcome#index' %> /
   <%= link_to 'Products', product_index_path %> /
   <%= @product.id%>
 </p>
