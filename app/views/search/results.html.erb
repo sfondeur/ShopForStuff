@@ -1,8 +1,9 @@
-<h4>Products found: <%= @products.size %></h4>
+<h4><%= @products.size %> results found for '<%= params[:q] %>'</h4>
 
 <% if @products.empty? %>
     <p>Sorry, no products matching were found.</p>
 <% else %>
+    <p>Here are your results found: </p>
     <ul>
         <% @products.each do |s| %>
             <li><%= link_to s.title, s %></li>

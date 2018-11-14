@@ -1,12 +1,12 @@
-<%= paginate @products  %>
-
 <p>
-    You've visited this site <%= pluralize @visit_count, 'time' %>
+  <%= link_to 'Products', product_index_path %> /
 </p>
 
-<h4>Products in shopping cart: <%= @shopping_cart %></h4>
+<h5>Product List</h5>
 
 <%= render partial: 'product',
            collection: @products,
            locals: { show_details_link: true} %>
 
+<br>
+<%= paginate @products  %>

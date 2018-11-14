@@ -14,23 +14,7 @@
 
   <body>
     <%= render 'layouts/header' %>
-
-    <!-- <div class="row filter" style="display: inline-flex;">
-      <select style="display: inline-flex">
-          <option value="" disabled selected>Filter</option>
-          <option value="1">Option 1</option>
-      </select>
-      <%= form_tag(results_search_index_path, method: "get") do %>
-      <%= text_field_tag(:q) %>
-      <button class="btn teal lighten-2 waves-effect waves-light searchbtn" type="submit" name="action">Search
-          <i class="material-icons right">send</i>
-      </button>
-      <% end %>
-    </div> -->
     
-
-    
-
     <div class="container">
       <div class="shaner-margins">
         <%= yield %>

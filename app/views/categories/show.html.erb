@@ -1,4 +1,9 @@
-<h4><%= @category.title %></h4>
+<p>
+  <%= link_to 'Categories', categories_path %> /
+  <%= @category.title %>
+</p>
+
+<h5><%= @category.title %></h5>
 
 <ul>
     <% @category.products.each do |x| %>

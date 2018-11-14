@@ -1,14 +1,18 @@
+<p>
+  <%= link_to 'Categories', categories_path %> /
+</p>
+
 <% @categories.each do |x| %>
-        <div class="row" style="display:inline-block">
-            <div class="col s12 m4">
-                <div class="card">
-                    <div class="card-image">
-                        <%= link_to x do %>
-                            <%= image_tag x.image, :style => "width: 500px; height: 220px;" %>
-                        <% end %>
-                        <span class="card-title"><%= x.title %></span>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="row" style="display:inline-block">
+      <div class="col s12 m4">
+          <div class="card">
+              <div class="card-image">
+                  <%= link_to x do %>
+                      <%= image_tag x.image, :style => "width: 500px; height: 220px;" %>
+                  <% end %>
+                  <span class="card-title"><%= x.title %></span>
+              </div>
+          </div>
+      </div>
+  </div>
 <% end %>

@@ -1,7 +1,10 @@
 <!--<%= render partial: 'product',
            object: @product,
            locals: { show_details_link: false} %>-->
-
+<p>
+  <%= link_to 'Products', product_index_path %> /
+  <%= @product.id%>
+</p>
 
 <div class="col s12 m7 show_card">
   <div class="card horizontal">
