@@ -5,10 +5,11 @@ class ApplicationController < ActionController::Base
 
     private
     def initialize_session
-        # OR operator checks if left side has value or not. If not, sets it to 0.
-        # default
+        # OR operator checks if left side has value or not. If not, defaults it to 0.
         session[:visit_count] ||= 0
-        session[:shopping_cart] ||= 0
+
+        # session for shopping cart
+        session[:cart] ||= []
     end
 
     private
@@ -19,12 +20,13 @@ class ApplicationController < ActionController::Base
         session[:visit_count] = @visit_count
     end
 
-    def load_shopping_cart
-        @shopping_cart = session[:shopping_cart]
+    def load_cart
+        @shopping_cart = Product.find(session[:cart])
     end
 
     def add_to_cart
         # .push method to add to the session[] (or append with '>>')
         # For the cart number in the header, use session[].size
+
     end
 end

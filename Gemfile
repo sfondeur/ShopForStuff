@@ -35,6 +35,8 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'materialize-sass'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
