@@ -55,6 +55,11 @@ footer {
     width: 150px;
 }
 
+.dropdown-checkout {
+    width: auto;
+    height: auto;
+}
+
 .remove-bottom-margin {
     margin-bottom: 0;
 }
@@ -104,4 +109,29 @@ div .input-field {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.753) inset !important;
+}
+
+ul li .checkoutprice {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-indent: 10px;
+    font-size: 10pt;
+}
+
+ul li .checkouttitle {
+    font-size: 13pt;
+    padding-bottom: 0;
+}
+
+.clear_cart_button {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background-color: rgba(139, 44, 44, 0.726);
+    font-size: 12pt;
+}
+
+.checkout_button {
+    width: 100%;
+    height: 35px;
 }

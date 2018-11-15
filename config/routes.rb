@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
   get 'welcome/index'
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  # devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
   # products
-  resources :product, only: [:index, :show]
+  resources :product, only: [:index, :show] do
+    member do
+      post :add_products_to_cart
+    end
+    collection do
+      post :clear_cart
+    end
+  end
   # static pages
   resources :pages, only: [:show]
   # categories

@@ -5,21 +5,34 @@ class ProductController < ApplicationController
     # @products = Product.order(:title)
     # Product.where("created_at >= ?", 1.week.ago.utc).order("DESC, created_at DESC")
     @products = Product.order(:title).page(params[:page]).per(4)
-
-  
   end
 
   # Specific Product by ID
   def show
     @product = Product.find(params[:id])
-    
   end
 
-  # POST /product/:id/add_to_cart
+  # POST /product/:id/add_products_to_cart
   def add_products_to_cart
+    id = params[:id].to_i
     # @shopping_cart << Product.find(params[:id])
-    session[:shopping_cart] << params[:id]
-    redirect to: :index
+
+    if session[:cart].include?(id)
+      # quantity increments by 1
+    end
+
+    unless session[:cart].include?(id)
+      session[:cart] << id
+    end
+    
+    redirect_to welcome_index_path
+  end
+
+  # Clears the shopping cart session
+  #  POST /product/clear_cart
+  def clear_cart
+    session[:cart] = []
+    redirect_to welcome_index_path
   end
 end
 

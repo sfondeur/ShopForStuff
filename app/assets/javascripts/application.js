@@ -20,7 +20,7 @@
 
 
 $(document).ready(function(){
-    $('.dropdown-trigger').dropdown({ coverTrigger: false, constrainWidth: false, hover: true });
+    $('.dropdown-trigger').dropdown({ coverTrigger: false, constrainWidth: false, hover: false });
  });
 
  document.addEventListener('DOMContentLoaded', function() {
