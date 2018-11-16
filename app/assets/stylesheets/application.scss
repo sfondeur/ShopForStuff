@@ -65,7 +65,7 @@ footer {
 }
 
 .welcomecard {
-    width: 600px;
+    // width: 600px;
 }
 
 .search_bar {
@@ -145,4 +145,13 @@ ul li .checkouttitle {
 
 select, .provinceform {
     display: inline;
+}
+
+.card-image {
+    height: 200px; /* Your height here */
+    overflow: hidden;
+}
+
+.card.horizontal .card-image img {
+    height: -webkit-fill-available;
 }

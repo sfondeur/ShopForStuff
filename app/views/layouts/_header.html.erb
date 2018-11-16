@@ -23,11 +23,71 @@
   <% end %>
 </ul>
 
+<!-- Hamburger menu button side-nav content -->
+<ul class="sidenav" id="mobile-demo">
+  <li>
+    <div class="center row">
+      <div class="col s12 " >
+        <div class="row" id="topbarsearch">
+          <div class="input-field col s6 s12">
+            <%= form_tag(results_search_index_path, method: "get", class: "formsearch" ) do %>
+              <%= text_field_tag(:q, "", class: "searchform") %>
+              <button class="btn teal lighten-2 waves-effect waves-light" type="submit" name="action">
+              <i class="material-icons searchicon">search</i></button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>          
+  </li>
+  <li>
+    <a href="/product">Products</a>
+  </li>
+  <li>
+    <a href="/categories">Categories</a>
+  </li>
+  <li class="divider"></li>
+  <li>
+    <%= link_to 'About', '/about' %>
+  </li>
+  <li>
+    <%= link_to 'Contact', '/contact' %>
+  </li>
+  <li class="divider"></li>
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to 'Log In', new_user_session_path %>
+    </li>
+    <li>
+      <%= link_to 'Sign Up', new_user_registration_path %>
+    </li>
+  <% end %>
+  <li class="divider"></li>
+  <li>
+    <a>
+      <i class="material-icons left">shopping_cart</i><%= @shopping_cart.size %>
+    </a>
+  </li>
+  <li>
+    <% if @shopping_cart.size > 0 %>
+      <button class="btn checkout_button">Checkout</button>
+      <li class="divider"></li>
+      <%= link_to 'Empty Cart?', clear_cart_product_index_path, method: :post, class: "btn clear_cart_button"%>
+    <% end %>
+  </li>
+</ul>
 
+
+<!-- Main HTML of the page -->
 <nav class="teal lighten-1">
   <div class="shaner-container">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">Shop For Stuffs</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li>    
             <div class="center row">
