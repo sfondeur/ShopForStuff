@@ -4,9 +4,9 @@
 
 <div class="shaner-margins-top">
     <% if user_signed_in? %>
-        <p>
-            Welcome Back, <%= current_user.email %>
-        </p>
+        <h4>
+            Welcome Back, <%= current_user.name %>!
+        </h4>
     <% end %>
 <div class="row">
     <div class="col s12 m12 l12 featured_card">

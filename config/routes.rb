@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
   # devise for users
-  devise_for :users
+  # devise_for :users
+
+  # our registration controller route
+  devise_for :users, :controllers => { registrations: 'registrations' }
   
   # active admin
   devise_for :admin_users, ActiveAdmin::Devise.config
