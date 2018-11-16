@@ -5,3 +5,12 @@
 .inline-block{
     display: inline-block;
 }
+
+.card-image {
+    height: 200px; /* Your height here */
+    overflow: hidden;
+}
+
+.card.horizontal .card-image img {
+    height: -webkit-fill-available;
+}

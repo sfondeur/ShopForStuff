@@ -7,9 +7,9 @@
   <%= @product.id %>
 </p>
 
-<div class="col s12 m7 show_card">
+<div class="col s12 show_card">
   <div class="card horizontal">
-    <div class="card-image">
+    <div style="width: 500px;">
       <img class="show_image" src="<%= @product.image %>" alt="full image">
     </div>
     <div class="card-stacked">
@@ -21,7 +21,7 @@
             <li><b>Price: </b> <%= number_to_currency @product.price %></li>
             <li><b>Categories: </b> 
               <% @product.product_categories.each do |cat| %>
-                <%= link_to cat.category.title, cat.category %>,
+                <%= link_to cat.category.title, cat.category %>
               <% end %>
             </li>
             <li><b>Manufacturer: </b> <%= @product.manufacturer %></li>

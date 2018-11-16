@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
 
         # session array for shopping cart
         session[:cart] ||= []
+
+        # flash
+        # add_flash_types :welcome, :danger, :warning, :success, :alert, :info
+        flash[:welcome] = "Welcome Back, "
+        
     end
 
     private

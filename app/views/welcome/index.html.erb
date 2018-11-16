@@ -1,60 +1,12 @@
-<!-- <p>
-  <%= link_to 'Home', 'welcome#index' %> /
-</p> -->
-
-
-<!--<div class="row inline-block">
-    <div class="col s12 m4">
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col s12 m4">
-        <div class="card blue-grey darken-2">
-            <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col s12 m4">
-        <div class="card blue-grey lighten-1">
-            <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-            </div>
-        </div>
-    </div>
-</div>
--->
-
 <div class="shaner-margins-top">
     <% if user_signed_in? %>
-        <h4>
-            Welcome Back, <%= current_user.name %>!
+        <h4 style="text-align: center;">
+            <%= flash[:welcome] %> <%= current_user.name %>!
         </h4>
     <% end %>
-<h5 class="header">Check out our new products!</h5>
+
+
+<h5 style="text-align: center;">Check out our new products!</h5>
 <div class="row inline-block">
     <div class="col s12 m6 cards-container featured_card">
         <div class="card horizontal hoverable welcomecard">
@@ -85,8 +37,8 @@
             </div>
         </div>
     </div>
-
-    <div class="col s12 cards-container featured_card">
+    <div class="container">
+        <div class="col s12 cards-container featured_card">
         <div class="card horizontal hoverable welcomecard">
             <div class="card-image">
                 <img src="<%= @random_product_3.image %>" alt="featured product" >
@@ -98,6 +50,7 @@
                     <div><%= @random_product_3.description %></div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </div>

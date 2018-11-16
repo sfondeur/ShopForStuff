@@ -147,11 +147,7 @@ select, .provinceform {
     display: inline;
 }
 
-.card-image {
-    height: 200px; /* Your height here */
-    overflow: hidden;
-}
-
-.card.horizontal .card-image img {
-    height: -webkit-fill-available;
+.show_image {
+    height: 300px; /* Your height here */
+    // overflow: hidden;
 }

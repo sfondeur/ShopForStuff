@@ -3,8 +3,8 @@
   <%= link_to 'Categories', categories_path %> /
 </p>
 
-<% @categories.each do |x| %>
-  <div class="row" style="display:inline-block">
+  <div class="row inline-block" >
+    <% @categories.each do |x| %>
       <div class="col s12 m4">
           <div class="card">
               <div class="card-image">
@@ -15,5 +15,5 @@
               </div>
           </div>
       </div>
+      <% end %>
   </div>
-<% end %>
