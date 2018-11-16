@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  
+  # devise for users
   devise_for :users
-  get 'welcome/index'
+  
+  # active admin
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
@@ -15,6 +18,9 @@ Rails.application.routes.draw do
   end
   # static pages
   resources :pages, only: [:show]
+  get ':permalink', to: 'pages#permalink'
+  get 'static_about', to: 'pages#about', as: 'about'
+
   # categories
   resources :categories, only: [:index, :show]
   # search
@@ -24,8 +30,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get ':permalink', to: 'pages#permalink'
-  get 'static_about', to: 'pages#about', as: 'about'
+  # welcome page
+  resources :welcome, only: [:index]
 
+  # root route to the welcome page
   root to: 'welcome#index'
 end

@@ -43,8 +43,7 @@
                 </div>
               </div>
             </div>          
-          </li> 
-          <li><a class="waves-effect waves-light" href="/">Home</a></li>
+          </li>
           <!-- Dropdown Trigger -->
           <li><a class="dropdown-trigger" data-belowOrigin="true" data-target="dropdown">
               Browse by..<i class="material-icons right">arrow_drop_down</i></a>
@@ -54,6 +53,18 @@
           <li><a class="dropdown-trigger" data-belowOrigin="true" data-target="dropdown">
               <i class="material-icons left">shopping_cart</i><%= @shopping_cart.size %></a>
           </li>
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to 'Log In', new_user_session_path %>
+            </li>
+            <li>
+              <%= link_to 'Sign Up', new_user_registration_path %>
+            </li>
+          <% end %>
       </ul>
     </div>
   </div>
