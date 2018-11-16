@@ -3,6 +3,11 @@
 </p> -->
 
 <div class="shaner-margins-top">
+    <% if user_signed_in? %>
+        <p>
+            Welcome Back, <%= current_user.email %>
+        </p>
+    <% end %>
 <div class="row">
     <div class="col s12 m12 l12 featured_card">
         <h5 class="header">Check out our new products!</h5>
