@@ -19,13 +19,15 @@ Rails.application.routes.draw do
       post :clear_cart
     end
   end
+
+  # categories
+  resources :categories, only: [:index, :show]
+
   # static pages
   resources :pages, only: [:show]
   get ':permalink', to: 'pages#permalink'
   get 'static_about', to: 'pages#about', as: 'about'
 
-  # categories
-  resources :categories, only: [:index, :show]
   # search
   resources :search, only: [:index] do
     collection do
@@ -35,7 +37,7 @@ Rails.application.routes.draw do
 
   # welcome page
   resources :welcome, only: [:index]
-
+  # get 'welcome', to: 'welcome#index'
   # root route to the welcome page
   root to: 'welcome#index'
 end
