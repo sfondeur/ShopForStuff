@@ -151,3 +151,44 @@ select, .provinceform {
     height: 300px; /* Your height here */
     // overflow: hidden;
 }
+
+// flash messages
+
+.flash_div {
+    position: absolute;
+    right: 80px;
+    top: 55px;
+    text-align: right;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-size: 12pt;
+}
+.success {
+    width: max-content;
+    background-color: #dff0d8;
+    border-color: #d0e9c6;
+    color: #3c763d;
+}
+.info {
+    width: max-content;
+    background-color: #d9edf7;
+    border-color: #bcdff1;
+    color: #31708f;
+}
+.warning {
+    width: max-content;
+    background-color: #fcf8e3;
+    border-color: #faf2cc;
+    color: #8a6d3b;
+}
+.danger {
+    width: max-content;
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
+}

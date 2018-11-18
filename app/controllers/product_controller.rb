@@ -25,15 +25,16 @@ class ProductController < ApplicationController
       session[:cart] << id
     end
     
-    flash[:cart_item_added] = "Added to your cart!"
-    redirect_to welcome_index_path
+    flash[:success] = "Item has been added!"
+    redirect_to root_url
   end
 
   # Clears the shopping cart session
   #  POST /product/clear_cart
   def clear_cart
     session[:cart] = []
-    redirect_to welcome_index_path
+    flash[:info] = "Cart has been emptied!"
+    redirect_to root_url
   end
 end
 

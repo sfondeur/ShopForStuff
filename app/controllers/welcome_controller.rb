@@ -5,7 +5,5 @@ class WelcomeController < ApplicationController
     @random_product = Product.order("RANDOM()").first
     @random_product_2 = Product.order("RANDOM()").last
     @random_product_3 = Product.order("RANDOM()").second
-
-    
   end
 end
