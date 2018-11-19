@@ -94,11 +94,16 @@
               <div class="col s12" style="height: 30px;">
                 <div class="row" id="topbarsearch">
                   <div class="input-field col s6 s12">
+                    
                     <%= form_tag(results_search_index_path, method: "get", class: "formsearch" ) do %>
+                    
+                      <%= collection_select(:search, :category, Category.order(:title), :id, :title, {:include_blank => ' '}, {:class=>"category-select"}) %>
+                    
                       <%= text_field_tag(:q, "", class: "searchform") %>
                       <button class="btn teal lighten-2 waves-effect waves-light" type="submit" name="action">
                       <i class="material-icons searchicon">search</i></button>
                     <% end %>
+
                   </div>
                 </div>
               </div>
