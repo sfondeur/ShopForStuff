@@ -1,9 +1,9 @@
 <div class="shaner-margins-top">
-    <!--<% if user_signed_in? %>
+    <% if user_signed_in? %>
         <h4 style="text-align: center;">
-           <%= current_user.name %>!
+           Welcome back, <%= current_user.name %>!
         </h4>
-    <% end %>-->
+    <% end %>
 
 <h5 style="text-align: center;">Check out our new products!</h5>
 <div class="row inline-block">
@@ -36,8 +36,8 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="col s12 cards-container featured_card">
+
+    <div class="col s12 m6 cards-container featured_card">
         <div class="card horizontal hoverable welcomecard">
             <div class="card-image">
                 <img src="<%= @random_product_3.image %>" alt="featured product" >
@@ -50,7 +50,22 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="col s12 m6 cards-container featured_card">
+        <div class="card horizontal hoverable welcomecard">
+            <div class="card-image">
+                <img src="<%= @random_product_4.image %>" alt="featured product" >
+            </div>
+            <div class="card-stacked">
+                <div class="card-content ">
+                    <div><%= link_to @random_product_4.title, @random_product_4 %></div>
+                    <div><%= number_to_currency @random_product_4.price %></div>
+                    <div><%= @random_product_4.description %></div>
+                </div>
+            </div>
         </div>
     </div>
+
 </div>
 </div>
