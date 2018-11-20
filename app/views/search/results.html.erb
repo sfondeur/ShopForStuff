@@ -1,4 +1,8 @@
-<h4><%= @products.size %> results found for '<%= params[:q] %>'</h4>
+<% if params[:search][:category].present? %>
+    <h4><%= @products.size %> results found in <%= @category_name %> for '<%= params[:q] %>'</h4>
+<% else %>
+    <h4><%= @products.size %> results found for '<%= params[:q] %>'</h4>
+<% end %>
 
 <% if @products.empty? %>
     <p>Sorry, no products matching were found.</p>

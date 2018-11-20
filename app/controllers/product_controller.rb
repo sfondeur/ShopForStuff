@@ -4,7 +4,7 @@ class ProductController < ApplicationController
   def index
     # @products = Product.order(:title)
     # Product.where("created_at >= ?", 1.week.ago.utc).order("DESC, created_at DESC")
-    @products = Product.order(:title).page(params[:page]).per(4)
+    @products = Product.order(:title).page(params[:page]).per(5)
   end
 
   # Specific Product by ID
@@ -25,14 +25,16 @@ class ProductController < ApplicationController
       session[:cart] << id
     end
     
-    redirect_to welcome_index_path
+    flash[:success] = "Item has been added!"
+    redirect_to root_url
   end
 
   # Clears the shopping cart session
   #  POST /product/clear_cart
   def clear_cart
     session[:cart] = []
-    redirect_to welcome_index_path
+    flash[:info] = "Cart has been emptied!"
+    redirect_to root_url
   end
 end
 

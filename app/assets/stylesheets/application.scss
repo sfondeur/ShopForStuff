@@ -65,7 +65,7 @@ footer {
 }
 
 .welcomecard {
-    width: 600px;
+    // width: 600px;
 }
 
 .search_bar {
@@ -95,6 +95,13 @@ footer {
 
 .formsearch {
     display: inline-flex;
+}
+.category-select {
+    width: 125px;
+    background-color: rgb(151, 225, 208);
+    border-radius: 10px;
+    height: 36px;
+    font-size: 12pt;
 }
 
 div .input-field {
@@ -134,4 +141,61 @@ ul li .checkouttitle {
 .checkout_button {
     width: 100%;
     height: 35px;
+}
+
+.field {
+    width: 300px;
+    margin: 15px;
+    display: inline-block;
+}
+
+
+select, .provinceform {
+    display: inline;
+}
+
+.show_image {
+    height: 300px; /* Your height here */
+    // overflow: hidden;
+}
+
+// flash messages
+
+.flash_div {
+    position: absolute;
+    right: 80px;
+    top: 55px;
+    text-align: right;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-size: 12pt;
+}
+.success, .notice {
+    width: max-content;
+    background-color: #dff0d8;
+    border-color: #d0e9c6;
+    color: #3c763d;
+}
+.info {
+    width: max-content;
+    background-color: #d9edf7;
+    border-color: #bcdff1;
+    color: #31708f;
+}
+.warning {
+    width: max-content;
+    background-color: #fcf8e3;
+    border-color: #faf2cc;
+    color: #8a6d3b;
+}
+.danger, .alert {
+    width: max-content;
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
 }

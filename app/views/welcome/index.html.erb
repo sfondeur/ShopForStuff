@@ -1,14 +1,16 @@
-<!-- <p>
-  <%= link_to 'Home', 'welcome#index' %> /
-</p> -->
-
 <div class="shaner-margins-top">
-<div class="row">
-    <div class="col s12 m12 l12 featured_card">
-        <h5 class="header">Check out our new products!</h5>
+    <% if user_signed_in? %>
+        <h4 style="text-align: center;">
+           Welcome back, <%= current_user.name %>!
+        </h4>
+    <% end %>
+
+<h5 style="text-align: center;">Check out our new products!</h5>
+<div class="row inline-block">
+    <div class="col s12 m6 cards-container featured_card">
         <div class="card horizontal hoverable welcomecard">
             <div class="card-image">
-                <img class="featured_image" style='height: 85%; width: 85%;' src="<%= @random_product.image %>" alt="featured product" >
+                <img src="<%= @random_product.image %>" alt="featured product" >
             </div>
             <div class="card-stacked">
                 <div class="card-content ">
@@ -20,10 +22,10 @@
         </div>
     </div>
 
-    <div class="col s12 m12 l12 featured_card">
+    <div class="col s12 m6 cards-container featured_card">
         <div class="card horizontal hoverable welcomecard">
             <div class="card-image">
-                <img class="featured_image" style='height: 85%; width: 85%;' src="<%= @random_product_2.image %>" alt="featured product" >
+                <img src="<%= @random_product_2.image %>" alt="featured product" >
             </div>
             <div class="card-stacked">
                 <div class="card-content ">
@@ -35,10 +37,10 @@
         </div>
     </div>
 
-    <div class="col s12 m12 l12 featured_card">
+    <div class="col s12 m6 cards-container featured_card">
         <div class="card horizontal hoverable welcomecard">
             <div class="card-image">
-                <img class="featured_image" style='height: 85%; width: 85%;' src="<%= @random_product_3.image %>" alt="featured product" >
+                <img src="<%= @random_product_3.image %>" alt="featured product" >
             </div>
             <div class="card-stacked">
                 <div class="card-content ">
@@ -49,5 +51,21 @@
             </div>
         </div>
     </div>
+
+    <div class="col s12 m6 cards-container featured_card">
+        <div class="card horizontal hoverable welcomecard">
+            <div class="card-image">
+                <img src="<%= @random_product_4.image %>" alt="featured product" >
+            </div>
+            <div class="card-stacked">
+                <div class="card-content ">
+                    <div><%= link_to @random_product_4.title, @random_product_4 %></div>
+                    <div><%= number_to_currency @random_product_4.price %></div>
+                    <div><%= @random_product_4.description %></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 </div>

@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
         # session array for shopping cart
         session[:cart] ||= []
+        
     end
 
     private

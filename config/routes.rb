@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
-  # devise_for :admin_users, ActiveAdmin::Devise.config
+  
+  # devise for users
+  # devise_for :users
+
+  # our registration controller route
+  devise_for :users, :controllers => { registrations: 'registrations' }
+  
+  # active admin
+  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
   # products
@@ -12,10 +19,15 @@ Rails.application.routes.draw do
       post :clear_cart
     end
   end
-  # static pages
-  resources :pages, only: [:show]
+
   # categories
   resources :categories, only: [:index, :show]
+
+  # static pages
+  resources :pages, only: [:show]
+  get ':permalink', to: 'pages#permalink'
+  get 'static_about', to: 'pages#about', as: 'about'
+
   # search
   resources :search, only: [:index] do
     collection do
@@ -23,8 +35,9 @@ Rails.application.routes.draw do
     end
   end
 
-  get ':permalink', to: 'pages#permalink'
-  get 'static_about', to: 'pages#about', as: 'about'
-
+  # welcome page
+  resources :welcome, only: [:index]
+  # get 'welcome', to: 'welcome#index'
+  # root route to the welcome page
   root to: 'welcome#index'
 end
