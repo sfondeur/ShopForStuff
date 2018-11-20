@@ -1,19 +1,20 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  
   # devise for users
   # devise_for :users
 
   # our registration controller route
-  devise_for :users, :controllers => { registrations: 'registrations' }
-  
+  devise_for :users, controllers: { registrations: 'registrations' }
+
   # active admin
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  
+
   # products
-  resources :product, only: [:index, :show] do
+  resources :product, only: %i[index show] do
     member do
-      post :add_products_to_cart
+      post :add_to_cart
     end
     collection do
       post :clear_cart
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   # categories
-  resources :categories, only: [:index, :show]
+  resources :categories, only: %i[index show]
 
   # static pages
   resources :pages, only: [:show]

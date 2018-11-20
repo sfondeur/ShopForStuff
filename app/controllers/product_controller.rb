@@ -1,5 +1,6 @@
-class ProductController < ApplicationController
+# frozen_string_literal: true
 
+class ProductController < ApplicationController
   # collection of all Products
   def index
     # @products = Product.order(:title)
@@ -12,20 +13,13 @@ class ProductController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  # POST /product/:id/add_products_to_cart
-  def add_products_to_cart
+  # POST /product/:id/add_to_cart
+  def add_to_cart
     id = params[:id].to_i
-    # @shopping_cart << Product.find(params[:id])
 
-    if session[:cart].include?(id)
-      # quantity increments by 1
-    end
+    session[:cart] << id unless session[:cart].include?(id)
 
-    unless session[:cart].include?(id)
-      session[:cart] << id
-    end
-    
-    flash[:success] = "Item has been added!"
+    flash[:success] = 'Item has been added!'
     redirect_to root_url
   end
 
@@ -33,13 +27,7 @@ class ProductController < ApplicationController
   #  POST /product/clear_cart
   def clear_cart
     session[:cart] = []
-    flash[:info] = "Cart has been emptied!"
+    flash[:info] = 'Cart has been emptied!'
     redirect_to root_url
   end
 end
-
-# TODO:
-#   BE ABLE TO FILTER PRODUCTS BY RECENTLY UPDATED
-#   BE ABLE TO FILTER PRODUCTS BY NEWLY CREATED
-#   MAKE FRONT PAGE DEDICATED TO ONLY THESE TYPES OF PRODUCTS
-

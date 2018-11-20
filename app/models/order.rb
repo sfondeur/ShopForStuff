@@ -1,6 +1,8 @@
-class Order < ApplicationRecord
-    # TODO: Make join table between Product and Order called 'OrderItem'
-    # has_many :items, class_name: 'OrderItem'
+# frozen_string_literal: true
 
-    # validates :first_name, :last_name, :subtotal, presence: true
+class Order < ApplicationRecord
+  # TODO: Make join table between Product and Order called 'OrderItem'
+  # has_many :items, class_name: 'OrderItem'
+
+  # validates :first_name, :last_name, :subtotal, presence: true
 end
