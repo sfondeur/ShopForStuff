@@ -36,7 +36,7 @@ gem 'materialize-sass'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'carrierwave', '~> 1.0'
-gem "mini_magick"
+gem 'mini_magick'
 gem 'rubocop', '~> 0.60.0', require: false
 
 # Use ActiveStorage variant
