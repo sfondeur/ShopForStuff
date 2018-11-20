@@ -37,7 +37,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
-gem 'rubocop', '~> 0.60.0', require: false
+gem 'rubocop'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
