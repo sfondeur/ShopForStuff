@@ -1,5 +1,5 @@
 ActiveAdmin.register Product do
-    permit_params :title, :description, :price, :image, :manufacturer,
+    permit_params :title, :description, :price, :image, :picture, :manufacturer,
                   product_categories_attributes: [ :id, :product_id, :category_id, :_destroy ]
 
     index do
@@ -9,6 +9,7 @@ ActiveAdmin.register Product do
         column :description
         column :price
         column :image
+        column :picture
         column :manufacturer
         column :categories do |product|
             product.categories.map { |prod| prod.title }.join(", ").html_safe
@@ -22,6 +23,7 @@ ActiveAdmin.register Product do
             row :description
             row :price
             row :image
+            row :picture
             row :manufacturer
             row :categories do |product|
                 product.categories.map { |prod| prod.title }.join(", ").html_safe
@@ -38,6 +40,7 @@ ActiveAdmin.register Product do
             f.input :description
             f.input :price
             f.input :image
+            f.input :picture
             f.input :manufacturer
             # adds dropdown for categories by using 'has_many'
             f.has_many :product_categories, allow_destroy: true do |n_f|
