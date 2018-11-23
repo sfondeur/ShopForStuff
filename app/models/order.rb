@@ -5,5 +5,6 @@ class Order < ApplicationRecord
   has_many :order_items, dependent: :destroy
   has_many :products, through: :order_items
 
-  # validates :first_name, :last_name, :subtotal, presence: true
+  validates :subtotal, presence: true,
+                    numericality: { greater_than_or_equal_to: 0 }
 end
