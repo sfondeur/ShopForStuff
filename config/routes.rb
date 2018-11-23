@@ -24,10 +24,11 @@ Rails.application.routes.draw do
   # categories
   resources :categories, only: %i[index show]
 
+ 
+
   # static pages
   resources :pages, only: [:show]
   get ':permalink', to: 'pages#permalink'
-  get 'static_about', to: 'pages#about', as: 'about'
 
   # search
   resources :search, only: [:index] do

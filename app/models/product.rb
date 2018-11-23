@@ -9,4 +9,15 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :product_categories, allow_destroy: true
 
   validates :title, :price, presence: true
+
+  # scope :order_by, ->(type) do
+  #   case type
+  #   when 'title'
+  #     order :title
+  #   when 'price_asc'
+  #     order 'price - price * discount ASC'
+  #   when 'price_desc'
+  #     order 'price - price * discount DESC'
+  #   end
+  # end
 end
