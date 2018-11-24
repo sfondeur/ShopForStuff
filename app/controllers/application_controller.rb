@@ -25,4 +25,12 @@ class ApplicationController < ActionController::Base
   def load_cart
     @shopping_cart = Product.find(session[:cart])
   end
+
+  def authenticate_user!
+    if user_signed_in?
+      super
+    else
+      redirect_to new_user_session_path, :alert => 'Need to be logged in to create an order!'
+    end
+  end
 end

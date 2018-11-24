@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   # categories
   resources :categories, only: %i[index show]
 
- 
+  # resources :carts, only: [:index]
+  get 'cart', to: 'carts#index'
 
   # static pages
   resources :pages, only: [:show]
@@ -41,5 +42,5 @@ Rails.application.routes.draw do
   resources :welcome, only: [:index]
   # get 'welcome', to: 'welcome#index'
   # root route to the welcome page
-  root to: 'welcome#index'
+  root to: 'welcome#index' 
 end
