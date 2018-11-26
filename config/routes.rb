@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'products/(:filter)', to: 'product#index', as: 'products'
+
   # categories
   resources :categories, only: %i[index show]
 

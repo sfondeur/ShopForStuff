@@ -6,3 +6,5 @@
 # RUN bundle install
 # COPY . /ShopForStuff
 # CMD ["rails","s"] 
+
+FROM rails:onbuild

@@ -13,14 +13,17 @@ class Product < ApplicationRecord
 
   validates :title, :price, presence: true
 
-  # scope :order_by, ->(type) do
-  #   case type
-  #   when 'title'
-  #     order :title
-  #   when 'price_asc'
-  #     order 'price - price * discount ASC'
-  #   when 'price_desc'
-  #     order 'price - price * discount DESC'
-  #   end
-  # end
+  scope :newly_added, -> { order(created_at: :desc) }
+  scope :updated,     -> { order(updated_at: :desc) }
+
+  def self.sort_by(sort_param)
+    case sort_param
+    when 'newly_added'
+      newly_added
+    when 'updated'
+      updated
+    else
+      all
+    end
+  end
 end

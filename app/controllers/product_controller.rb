@@ -5,7 +5,9 @@ class ProductController < ApplicationController
   def index
     # @products = Product.order(:title)
     # Product.where("created_at >= ?", 1.week.ago.utc).order("DESC, created_at DESC")
-    @products = Product.order(:title).page(params[:page]).per(5)
+    # @products = Product.order(:title).page(params[:page]).per(5)
+
+    @products = Product.sort_by(params[:order]).page(params[:page]).per(5)
   end
 
   # Specific Product by ID
