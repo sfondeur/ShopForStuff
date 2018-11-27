@@ -41,6 +41,9 @@ Rails.application.routes.draw do
     end
   end
 
+  # stripe routes
+  resources :charges, only: [:new, :create]
+
   # welcome page
   resources :welcome, only: [:index]
   # get 'welcome', to: 'welcome#index'
