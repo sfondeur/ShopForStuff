@@ -7,4 +7,13 @@
 # COPY . /ShopForStuff
 # CMD ["rails","s"] 
 
-FROM rails:onbuild
+FROM ruby:2.5.1
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs imagemagick
+RUN mkdir /sfs
+WORKDIR /sfs
+COPY Gemfile /sfs/Gemfile
+COPY Gemfile.lock /sfs/Gemfile.lock
+RUN bundle install
+COPY . /sfs
+CMD bundle exec puma -C config/puma.rb

@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class OrdersController < ApplicationController
-  def index; end
+  def index
+    @orders = Order.all.where(user_id: current_user.id).order('created_at DESC')
+  end
 
   def show
     @order = Order.find(params[:id])

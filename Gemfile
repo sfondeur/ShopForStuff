@@ -40,6 +40,7 @@ gem 'materialize-sass'
 gem 'mini_magick'
 gem 'pry'
 gem 'rubocop'
+gem 'stripe'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
