@@ -182,7 +182,7 @@ select, .provinceform {
     border-color: #faf2cc;
     color: #8a6d3b;
 }
-.danger, .alert {
+.danger, .alert, .error {
     @extend .flash_div;
     background-color: #f2dede;
     border-color: #ebcccc;

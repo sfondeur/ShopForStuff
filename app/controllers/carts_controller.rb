@@ -5,16 +5,16 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-		
+    session[:subtotal] = subtotal
   end
 
   def subtotal
-    total = 0
+    subtotal = 0
     @shopping_cart.each do |item|
-      total = total + item.price
+      subtotal = subtotal + item.price
     end
 
-    total
+    subtotal
   end
   helper_method :subtotal
 
