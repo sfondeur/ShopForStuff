@@ -22,7 +22,7 @@ class ProductController < ApplicationController
     session[:cart] << id unless session[:cart].include?(id)
 
     flash[:success] = 'Item has been added!'
-    redirect_to root_url
+    redirect_to root_url  
   end
 
   # Clears the shopping cart session
@@ -31,5 +31,14 @@ class ProductController < ApplicationController
     session[:cart] = []
     flash[:info] = 'Cart has been emptied!'
     redirect_to root_url
+  end
+
+  # remove specific items from cart
+  def remove_item
+    cart_item_id = params[:id].to_i
+    session[:cart].delete(cart_item_id)
+
+    flash[:info] = 'Item has been removed!'
+    redirect_to cart_url
   end
 end

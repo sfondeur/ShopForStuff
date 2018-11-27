@@ -10,31 +10,24 @@
   </p>
 
     <table class="responsive-table striped">
-        <thead>
-          <tr>
-              <th>Item</th>
-              <th>Image</th>
-              <th>Quantity</th>
-              <th>Price</th>
-          </tr>
-        </thead>
-
         <tbody>
           <% @shopping_cart.each do |item| %>
           <tr>
-            <td><%= item.title %></td>
-            <td><img src="<%= item.picture.thumb %>"></td>
-            <td>1</td>
-            <td><%= number_to_currency item.price %></td> 
+            <td class="center-align"><img src="<%= item.picture.thumb %>"></td>
+            <td class="center-align"><%= item.title %></td>
+            <td class="left-align"><%= number_to_currency item.price %></td>
+            <td>
+              <%= button_to "Remove", remove_item_product_path(item), :class => "btn", :method => :post %>
+            </td>
           </tr>
           <% end %>
 
           <tr>
             <td></td>
             <td></td>
-            <td></td>
+            <td><b>Sub-Total: </b><%= number_to_currency subtotal %></td>
             <td>
-              <b>Sub-Total: </b><%= number_to_currency subtotal %>
+              
             </td>
           </tr>
 
