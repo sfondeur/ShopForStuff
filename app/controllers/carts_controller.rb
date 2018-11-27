@@ -19,6 +19,11 @@ class CartsController < ApplicationController
   helper_method :subtotal
 
   def total
-    
+    # using provinces, calculate total amount to be paid.
+    # subtotal * taxrate = taxamount
+    # taxamount + subtotal = total
+
+    # EX: 99.99 * 0.13 = 12.99
+    # 12.99 + 99.99 = 112.98
   end
 end
