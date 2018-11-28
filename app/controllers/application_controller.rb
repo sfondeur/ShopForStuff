@@ -13,6 +13,12 @@ class ApplicationController < ActionController::Base
 
     # session array for shopping cart
     session[:cart] ||= []
+    # prod = Product.find(35)
+    # session[:thing] ||= {}
+    # session[:thing][:prod] = prod
+    # session[:thing][:prodname] = session[:thing][:prod]["title"].to_s
+    # session[:thing][:quantity] = 2.to_i
+    # session[:thing] = {}
   end
 
   # def track_and_load_visit_count

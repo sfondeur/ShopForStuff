@@ -18,7 +18,7 @@ class ProductController < ApplicationController
   # POST /product/:id/add_to_cart
   def add_to_cart
     id = params[:id].to_i
-
+    # qty = params[:quantity].to_i
     session[:cart] << id unless session[:cart].include?(id)
 
     flash[:success] = 'Item has been added!'

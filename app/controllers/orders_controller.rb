@@ -3,6 +3,9 @@
 class OrdersController < ApplicationController
   def index
     @orders = Order.all.where(user_id: current_user.id).order('created_at DESC')
+
+    # if customer_signed_in?
+    # @orders = current_user.orders.order(updated_at: :desc)
   end
 
   def show
@@ -22,7 +25,5 @@ class OrdersController < ApplicationController
       gst: province.gst,
       hst: province.hst
     )
-
-    @products.each { |prod| order.create_order_item(prod) }
   end
 end

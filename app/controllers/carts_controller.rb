@@ -6,12 +6,17 @@ class CartsController < ApplicationController
 
   def index
     session[:subtotal] = subtotal
+
+    # grab province_id for current_user
+    @province = current_user.province_id
+    tax = Province.find(@province)
+    @gst = tax.gst
   end
 
   def subtotal
     subtotal = 0
     @shopping_cart.each do |item|
-      subtotal = subtotal + item.price
+      subtotal += item.price
     end
 
     subtotal
@@ -25,5 +30,7 @@ class CartsController < ApplicationController
 
     # EX: 99.99 * 0.13 = 12.99
     # 12.99 + 99.99 = 112.98
+
+    
   end
 end
