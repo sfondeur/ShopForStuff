@@ -26,15 +26,13 @@
             </li>
             <li><b>Manufacturer: </b> <%= @product.manufacturer %></li>
           </ul>
-          <!--<button class="btn waves-light" type="submit" name="action">Add to Cart
-            <i class="material-icons right">shopping_cart</i>
-          </button> -->
 
-          <%= link_to  add_products_to_cart_product_path(@product), method: :post, class: "btn waves-light" do %>
+        
+          
+
+          <%= link_to add_to_cart_product_path(@product), method: :post, class: "btn waves-light" do %>
             Add to Cart<i class="material-icons right">shopping_cart</i>
           <% end %>
-
-          <!--<%= button_to "Add To Cart", root_url, :method => :post, :class => "btn waves-light" %> -->
         </div>
     </div>
   </div>

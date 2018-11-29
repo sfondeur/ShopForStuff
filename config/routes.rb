@@ -1,32 +1,38 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  
   # devise for users
   # devise_for :users
 
   # our registration controller route
-  devise_for :users, :controllers => { registrations: 'registrations' }
-  
+  devise_for :users, controllers: { registrations: 'registrations' }
+
   # active admin
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  
+
   # products
-  resources :product, only: [:index, :show] do
+  resources :product, only: %i[index show] do
     member do
-      post :add_products_to_cart
+      post :add_to_cart
+      post :remove_item
     end
     collection do
       post :clear_cart
     end
   end
 
+  get 'products/(:filter)', to: 'product#index', as: 'products'
+
   # categories
-  resources :categories, only: [:index, :show]
+  resources :categories, only: %i[index show]
+
+  # resources :carts, only: [:index]
+  get 'cart', to: 'carts#index'
 
   # static pages
   resources :pages, only: [:show]
   get ':permalink', to: 'pages#permalink'
-  get 'static_about', to: 'pages#about', as: 'about'
 
   # search
   resources :search, only: [:index] do
@@ -35,9 +41,12 @@ Rails.application.routes.draw do
     end
   end
 
+  # stripe routes
+  resources :charges, only: [:new, :create]
+
   # welcome page
   resources :welcome, only: [:index]
   # get 'welcome', to: 'welcome#index'
   # root route to the welcome page
-  root to: 'welcome#index'
+  root to: 'welcome#index' 
 end

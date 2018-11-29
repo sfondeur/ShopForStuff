@@ -1,0 +1,41 @@
+<h4>Shopping Cart</h4>
+
+<% if @shopping_cart.empty? %>
+
+  <p>You have no items in your cart yet!</p>
+  
+<% else %>
+  <p>
+      Here's what your cart looks like so far, <%= current_user.name %>:
+  </p>
+
+  <%= @province %>
+  <%= @gst %>
+
+    <table class="responsive-table striped">
+        <tbody>
+          <% @shopping_cart.each do |item| %>
+          <tr>
+            <td class="center-align"><img src="<%= item.picture.thumb %>"></td>
+            <td class="center-align"><%= item.title %></td>
+            <td class="left-align"><%= number_to_currency item.price %></td>
+            <td>
+              <%= button_to "Remove", remove_item_product_path(item), :class => "btn", :method => :post %>
+            </td>
+          </tr>
+          <% end %>
+
+          <tr>
+            <td></td>
+            <td></td>
+            <td><b>Sub-Total: </b><%= number_to_currency session[:subtotal] %></td>
+            <td>
+              
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+  <%= button_to "Proceed to Payment", 'charges/new', :class => "btn", :method => :get %>
+<% end %>

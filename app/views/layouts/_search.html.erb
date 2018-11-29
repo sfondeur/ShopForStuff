@@ -1,0 +1,8 @@
+<%= form_tag(results_search_index_path, method: "get", class: "formsearch" ) do %>
+                    
+    <%= collection_select(:search, :category, Category.order(:title), :id, :title, {:include_blank => 'All'}, {:class=>"category-select"}) %>
+
+    <%= text_field_tag(:q, "", class: "searchform") %>
+    <button class="btn teal lighten-2 waves-effect waves-light" type="submit" name="action">
+    <i class="material-icons searchicon">search</i></button>
+<% end %>
