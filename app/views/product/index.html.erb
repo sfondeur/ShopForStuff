@@ -5,6 +5,10 @@
 
 <h5>Product List</h5>
 
+<%= link_to 'New Products', products_path(order: :newly_added)%>
+|
+<%= link_to 'Updated Recently', products_path(order: :updated) %>
+
 <%= render partial: 'product',
            collection: @products,
            locals: { show_details_link: true} %>

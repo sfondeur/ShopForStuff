@@ -15,11 +15,10 @@
  
  */
 
-// @import "materialize/components/color-variables";
-// $primary-color: color("blue", "lighten-2") !default;
-// $secondary-color: color("yellow", "base") !default;
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "_variables";
+@import "_mixins";
 
 // changes dropdown menu text colour
 .dropdown-content li > a, .dropdown-content li > span {
@@ -37,6 +36,14 @@ footer {
     text-align: center;
  }
 
+.nav-colour {
+    background-color: $primary-color;
+}
+
+.footer-colour {
+    background-color: $accent-color;
+}
+
 .shaner-margins {
     margin-top: 10px;
     margin-bottom: 100px;
@@ -52,20 +59,11 @@ footer {
 }
 
 .dropdown-content {
-    width: 150px;
-}
-
-.dropdown-checkout {
-    width: auto;
-    height: auto;
+    // width: 150px;
 }
 
 .remove-bottom-margin {
     margin-bottom: 0;
-}
-
-.welcomecard {
-    width: 600px;
 }
 
 .search_bar {
@@ -80,10 +78,6 @@ footer {
     line-height: 55px;
 }
 
-.cartdropdown {
-    width: 300px;
-    height: 250px;
-}
 
 .formsearch, .searchform {
     background-color: whitesmoke;
@@ -95,6 +89,13 @@ footer {
 
 .formsearch {
     display: inline-flex;
+}
+.category-select {
+    width: 125px;
+    background-color: rgb(199, 240, 234);
+    @include border-radius(10px);
+    height: 36px;
+    font-size: 12pt;
 }
 
 div .input-field {
@@ -131,7 +132,59 @@ ul li .checkouttitle {
     font-size: 12pt;
 }
 
-.checkout_button {
-    width: 100%;
-    height: 35px;
+.field {
+    width: 300px;
+    margin: 15px;
+    display: inline-block;
+}
+
+
+select, .provinceform {
+    display: inline;
+}
+
+.show_image {
+    height: 300px;
+    // overflow: hidden;
+}
+
+// flash messages
+.flash_div {
+    position: absolute;
+    right: 80px;
+    top: 55px;
+    text-align: right;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-size: 12pt;
+    width: max-content;
+}
+.success, .notice {
+    @extend .flash_div;
+    background-color: #dff0d8;
+    border-color: #d0e9c6;
+    color: #3c763d;
+}
+.info {
+    @extend .flash_div;
+    background-color: #d9edf7;
+    border-color: #bcdff1;
+    color: #31708f;
+}
+.warning {
+    @extend .flash_div;
+    background-color: #fcf8e3;
+    border-color: #faf2cc;
+    color: #8a6d3b;
+}
+.danger, .alert, .error {
+    @extend .flash_div;
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
 }

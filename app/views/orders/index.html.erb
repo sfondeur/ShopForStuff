@@ -1,0 +1,12 @@
+<h4>Here are your orders <%= current_user.name%> </h4>
+<div>
+    <p>
+        <% @orders.each do |order|%>
+            <p>Order ID: <%= order.id %></p>
+            <p>Items Subtotal: <%= order.subtotal%></p>
+            <p>Order Placed: <%= order.created_at %></p>
+            <p>Status: <%= order.status %></p>
+            <br>
+        <% end %>
+    </p>
+</div>

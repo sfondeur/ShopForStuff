@@ -2,57 +2,129 @@
 <ul id="dropdown" class="dropdown-content">
   <li><a href="/product">Products</a></li>
   <li class="divider"></li>
-  <li><a href="/categories">Category</a></li>
+  <li><a href="/categories">Categories</a></li>
   <li class="divider"></li>
 </ul>
 
 <!-- cart dropdown -->
-<ul id="dropdown" class="dropdown-content dropdown-checkout">
+<ul id="dropdown" class="dropdown-content">
   <% @shopping_cart.each do |x| %>
     <li>
         <span class="checkouttitle"><%= x.title %></span>
         <span class="checkoutprice"><%= number_to_currency x.price%></span>
-        <span class="checkoutprice">Qty: 1</span>
     </li>
     <li class="divider"></li>
   <% end %>
   <% if @shopping_cart.size > 0 %>
-    <button class="btn checkout_button">Checkout</button>
+    <%= link_to 'Checkout', cart_path, :class => "btn", :method => :get %>
     <li class="divider"></li>
     <%= link_to 'Empty Cart?', clear_cart_product_index_path, method: :post, class: "clear_cart_button"%>
   <% end %>
 </ul>
 
+<!-- Hamburger menu button side-nav content -->
+<ul class="sidenav" id="mobile-demo">
+  <li>
+    <div class="center row">
+      <div class="col s12 " >
+        <div class="row">
+          <div class="input-field col s6 s12">
+            <%= render 'layouts/search' %>
+          </div>
+        </div>
+      </div>
+    </div>          
+  </li>
+  <li>
+    <a href="/product">Products</a>
+  </li>
+  <li>
+    <a href="/categories">Categories</a>
+  </li>
+  <li class="divider"></li>
+  <li>
+    <%= link_to 'About', '/about' %>
+  </li>
+  <li>
+    <%= link_to 'Contact', '/contact' %>
+  </li>
+  <li class="divider"></li>
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+    </li>
+  <% else %>
+    <li>
+      <%= link_to 'Log In', new_user_session_path %>
+    </li>
+    <li>
+      <%= link_to 'Sign Up', new_user_registration_path %>
+    </li>
+  <% end %>
+  <li class="divider"></li>
+  <li>
+    <a>
+      <i class="material-icons left">shopping_cart</i><%= @shopping_cart.size %>
+    </a>
+  </li>
+  <li>
+    <% if @shopping_cart.size > 0 %>
+      <button class="btn checkout_button">Checkout</button>
+      <li class="divider"></li>
+      <%= link_to 'Empty Cart?', clear_cart_product_index_path, method: :post, class: "btn clear_cart_button"%>
+    <% end %>
+  </li>
+</ul>
 
-<nav class="teal lighten-1">
+
+<!-- Main HTML of the page -->
+<nav class="nav-colour">
   <div class="shaner-container">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">Shop For Stuffs</a>
-        <ul class="right hide-on-med-and-down">
-          <li>    
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down" style="height: 30px;">
+          <li style="height: 30px;">    
             <div class="center row">
-              <div class="col s12 " >
-                <div class="row" id="topbarsearch">
+              <div class="col s12" style="height: 30px;">
+                <div class="row">
                   <div class="input-field col s6 s12">
-                    <%= form_tag(results_search_index_path, method: "get", class: "formsearch" ) do %>
-                      <%= text_field_tag(:q, "", class: "searchform") %>
-                      <button class="btn teal lighten-2 waves-effect waves-light" type="submit" name="action">
-                      <i class="material-icons searchicon">search</i></button>
-                    <% end %>
+                    
+                    <%= render 'layouts/search' %>
+
                   </div>
                 </div>
               </div>
             </div>          
-          </li> 
-          <li><a class="waves-effect waves-light" href="/">Home</a></li>
+          </li>
           <!-- Dropdown Trigger -->
           <li><a class="dropdown-trigger" data-belowOrigin="true" data-target="dropdown">
-              Browse by..<i class="material-icons right">arrow_drop_down</i></a>
+              Browse<i class="material-icons right">arrow_drop_down</i></a>
           </li>
-          <li><a class="waves-effect waves-light" href="/about">About</a></li>
-          <li><a class="waves-effect waves-light" href="/contact">Contact</a></li>
-          <li><a class="dropdown-trigger" data-belowOrigin="true" data-target="dropdown">
-              <i class="material-icons left">shopping_cart</i><%= @shopping_cart.size %></a>
+          <li>
+            <%= link_to 'About', '/about' %>
+          </li>
+          <li>
+            <%= link_to 'Contact', '/contact' %>
+          </li>
+          
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to 'Log In', new_user_session_path %>
+            </li>
+            <li>
+              <%= link_to 'Sign Up', new_user_registration_path %>
+            </li>
+          <% end %>
+
+          <li>
+            <a class="dropdown-trigger" data-belowOrigin="true" data-target="dropdown">
+              <i class="material-icons left">shopping_cart</i><span class="new badge teal lighten-2" data-badge-caption="in cart"><%= @shopping_cart.size %></span>
+            </a>
           </li>
       </ul>
     </div>

@@ -1,6 +1,11 @@
-class Order < ApplicationRecord
-    # TODO: Make join table between Product and Order called 'OrderItem'
-    # has_many :items, class_name: 'OrderItem'
+# frozen_string_literal: true
 
-    # validates :first_name, :last_name, :subtotal, presence: true
+class Order < ApplicationRecord
+  belongs_to :user
+
+  has_many :order_items, dependent: :destroy
+  has_many :products, through: :order_items
+
+  validates :subtotal, presence: true
+  validates :user, presence: true
 end

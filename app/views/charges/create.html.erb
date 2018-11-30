@@ -1,0 +1,10 @@
+<h4>Thanks, you paid <strong><%= number_to_currency(@amount/100.00) %></strong>!</h4>
+
+<h5>Order ---order here--- has been created</h5>
+
+
+<h4>Stripe Customer</h4>
+<%= debug @customer %>
+
+<h4>Charge</h4>
+<%= debug @charge %>

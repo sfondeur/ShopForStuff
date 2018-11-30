@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 class WelcomeController < ApplicationController
   def index
-    # QUERY FOR A LIMITED AMOUNT OF PRODUCTS THAT HAVE BEEN NEWLY ADDED OR UPDATED.
     #  EX: LIKE AMAZONS FRONT PAGE FOR ITEMS ON SALE.
-    @random_product = Product.order("RANDOM()").first
-    @random_product_2 = Product.order("RANDOM()").last
-    @random_product_3 = Product.order("RANDOM()").second
-
+    # grab a unique random list of 4 products
+    random = Product.order('RANDOM()').limit(4).uniq
+    @random_product = random.first
+    @random_product_two = random.last
+    @random_product_three = random.second
+    @random_product_four = random.third
   end
 end
