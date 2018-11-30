@@ -9,8 +9,8 @@
       Here's what your cart looks like so far, <%= current_user.name %>:
   </p>
 
-  <%= @province %>
-  <%= @gst %>
+  <%= @total_tax_amount %>
+  <%= number_to_currency(@total) %>
 
     <table class="responsive-table striped">
         <tbody>
@@ -28,7 +28,7 @@
           <tr>
             <td></td>
             <td></td>
-            <td><b>Sub-Total: </b><%= number_to_currency session[:subtotal] %></td>
+            <td><b>Sub-Total: </b><%= number_to_currency subtotal %></td>
             <td>
               
             </td>

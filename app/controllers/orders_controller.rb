@@ -13,17 +13,4 @@ class OrdersController < ApplicationController
   end
 
   def new; end
-
-  private
-
-  def create_order
-    province = current_user.province
-
-    order = current_user.orders.create!(
-      status: 'Pending',
-      pst: province.pst,
-      gst: province.gst,
-      hst: province.hst
-    )
-  end
 end

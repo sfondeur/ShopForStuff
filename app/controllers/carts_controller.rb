@@ -5,12 +5,9 @@ class CartsController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    # subtotal
     session[:subtotal] = subtotal
-
-    # grab province_id for current_user
-    @province = current_user.province_id
-    tax = Province.find(@province)
-    @gst = tax.gst
+    session[:total] = total
   end
 
   def subtotal
@@ -23,14 +20,27 @@ class CartsController < ApplicationController
   end
   helper_method :subtotal
 
+  # calculates the total amount to be paid for the order
   def total
-    # using provinces, calculate total amount to be paid.
-    # subtotal * taxrate = taxamount
-    # taxamount + subtotal = total
+    # @total = ((@total_tax_rate + 1) * session[:subtotal])
+    @total = tax_amount + subtotal
+  end
 
-    # EX: 99.99 * 0.13 = 12.99
-    # 12.99 + 99.99 = 112.98
+  # calculates taxes
+  def tax_amount
+    @province = current_user.province_id
+    province = Province.find(@province)
+    @gst = province.gst
+    @pst = province.pst
+    @hst = province.hst
 
-    
+    # sessions for taxes to be used in Order creation
+    session[:gst] ||= @gst
+    session[:pst] ||= @pst
+    session[:hst] ||= @hst
+
+    @total_tax_rate = @gst + @pst + @hst
+
+    @total_tax_amount = (subtotal * @total_tax_rate).to_d
   end
 end
